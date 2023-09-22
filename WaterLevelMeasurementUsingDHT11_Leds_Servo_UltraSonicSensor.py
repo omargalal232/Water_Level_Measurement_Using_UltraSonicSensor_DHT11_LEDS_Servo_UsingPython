@@ -1,3 +1,12 @@
+# Water level measurement project using python. An ultrasonic sensor is placed over the water, when it reads that
+# water level is below 30%, a red led lights up and servo is set to max indicating that a water valve will open to
+# pour big quantity of water. When it reads that water level is over 30% and below 60%, a yellow led lights up
+# and servo is set to mid indicating that a water valve will open to pour some water but not a great quantity.
+# When it reads that water level is over 60%, a green led lights up and servo is set to detach indicating that
+# the water valve will stop pouring water, until it reads another reading. Also there's a function
+# "measure_temperature_humidity()" that uses the DHT sensor to read temperature and humidity and put them in a csv
+# file along with the time of the reading and the water percentage.
+
 from gpiozero import DistanceSensor, LED, Servo
 import Adafruit_DHT
 import time
@@ -63,5 +72,3 @@ try:
 
 except KeyboardInterrupt:
     print("Exiting...")
-
-# Water level measurement project using python. An ultrasonic sensor is placed over the water, when it reads that water level is below 30%, a red led lights up and
